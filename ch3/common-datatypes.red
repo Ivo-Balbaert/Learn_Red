@@ -28,7 +28,8 @@ no
 0.6.4   ; tuple! 
 199.4.80.7
 
-%"C:\Users\Peter\Documents\cv.txt"      ; file! 
+%"C:\Users\Peter\Documents\cv.txt"      ; file!
+%/c/windows/
 %"/home/users/Peter/Documents/cv.txt" 
 %../scripts/*.red
 

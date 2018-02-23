@@ -3,14 +3,22 @@ Red [
 ]
 
 age: 62
+is-integer?: false
 lunch-time: 12:32
 birth-day: 17-Jan-1997
 friends: ["Jeff" "Paula" "Viviane"]
 
-age  ;== 62
-print :age   ;== 62
+n: 12   m: 42    ;== 42
+n  ;== 12
+m  ;== 42
 
 age: number: size: 62
+age ;== 62
+number! ;== 62
+size ;== 62
+
+age  ;== 62
+print :age   ;== 62
 
 value? age    ;== true
 
@@ -44,6 +52,12 @@ print b     ;== 1 2 3
 append a 4
 print a     ;== 1 2 3 4
 print b     ;== 1 2 3 4
+
+;-- same with simple types:
+a: 20 ;== 20
+b: a  ;== 20
+a: 25 ;== 25
+b     ;== 20
 
 ;-- b points to a different value than a with copy:
 a: [1 2 3]
