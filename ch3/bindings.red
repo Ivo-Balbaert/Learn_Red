@@ -17,7 +17,6 @@ age ;== 62
 number! ;== 62
 size ;== 62
 
-age  ;== 62
 print :age   ;== 62
 
 value? age    ;== true

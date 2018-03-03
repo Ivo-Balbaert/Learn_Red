@@ -10,6 +10,7 @@ if now/time < 12:00 [print "before noon"] ;== before noon
 
 n: 12 m: 42
 if any [n = 13  m = 42] [print "true!"]  ;== true!
+if all [n = 13  m = 42] [print "true!"]  ;== none ; nothing printed
 
 if 42 [print "true!"]   ;==true!
 if "ok" [print "true!"] ;==true!
@@ -137,3 +138,13 @@ case [
     find name "u" [print {Your name contains the letter "u"}]
     true [print {Your name doesn't contain any vowels!}]
 ] ;== Your name contains the letter "i"
+
+; catch - throw
+catch  [print "before throw" throw "error" print "after throw"]
+;== before throw  ; "error" is returned     
+
+if n = 0 [throw 5] ;== *** Throw Error: no catch for throw: 5
+
+; throw/name rvalue tname
+; catch/name [some function call with a throw] tname
+; catch/name [some function call with a throw] [tname1 tname2]
