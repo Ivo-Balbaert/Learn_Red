@@ -4,6 +4,7 @@ Red []
 print (6 < 13) and (42 < 33)    ;== false
 print (43 < 42) xor (44 < 43)   ;== false
 print complement 3              ;== -4
+if (4 < 5) and (6 < 7) [print "ok"]  ;== ok
 
 ; comparison operators:
 n: 13

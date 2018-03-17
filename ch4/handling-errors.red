@@ -62,6 +62,10 @@ if error? err: try [4 < "abc"] [probe err]
 ; *** Stack: probe
 
 ; cause-error
+m: 10
 n: 0
 if n = 0 [ cause-error 'math 'zero-divide [] ]
+m / n
+
 if n = 0 [ make error! [math zero-divide] ]    ; equivalent
+if n = 0 [ make error! 402 ]    ; equivalent

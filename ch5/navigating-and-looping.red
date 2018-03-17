@@ -1,12 +1,6 @@
 Red []
 
-; series
-names: ["John" "Dave" "Jane" "Bob" "Sue"]
-codes: [2804 9439 2386 9823 4217]
-files: [%employees %vendors %contractors %events]
-
-data: [A B C D]
-type? data   ;== block!
+data: [A B C D] 
 empty-lst: []
 
 index? data  ;== 1
@@ -66,7 +60,7 @@ forall names [print names]
 ;== Dave Jane
 ;== Jane
 
-; QA 4
+; QA 5
 numbers: [323 2498 94321 31 82]
 foreach number numbers [
     if number > 1000 [print number]

@@ -20,6 +20,10 @@ ser          ;== ["Product is: " 7 * 42]
 ser2: ["Total is: " 108 + 42]
 rejoin [ser ser2]  ;== ["Product is: " 7 * 42 ["Total is: " 108 + 42]]
 
+count: 10
+print rejoin [newline "Total Images: " count]
+;== Total Images: 10
+
 ; clear
 s: "American politics"
 clear skip s 8   ;== ""
@@ -43,6 +47,25 @@ s  ;== "Red  "
 pad/left s 7
 s  ;== "  Red  "
 
+; insert
+; at the start:
+str: "painting"               
+insert str "beautiful "
+str  ;== "beautiful painting"
+
+str: "abcdefg"
+insert at str 3 "ONE"  ;== "cdefg"
+str                    ;== "abONEcdefg"
+str: "abcdefg"
+insert find str "c" "ONE" ;== "cdefg"
+str	                      ;== "abONEcdefg"
+; insert (find str "c") "ONE"  ; equivalent
+
+; append
+str: "Red"         ;== "Red"
+append str "100"   ;== "Red100"
+append str [1 0 0] ;== "Red100100"
+
 ; find
 s1: "The quick brown fox jumps over the lazy dog"
 find s1 "fox" ;== "fox jumps over the lazy dog"
@@ -64,30 +87,11 @@ remove/part str 4  ;== "tiful"
 str                ;== "tiful"
 
 str: "mnopqrst"
-copy/part at str 2 4    ;-- start at position 2, get 4 items
+copy/part at str 2 4    ; start at position 2, get 4 items
 ;== "nopq"
 
 ;exclude
 exclude "The United Kingdom" "aeiou"  ;== "Th ndKgm"
-
-; insert
-; at the start:
-str: "painting"               
-insert str "beautiful "
-str  ;== "beautiful painting"
-
-str: "abcdefg"
-insert at str 3 "ONE"  ;== "cdefg"
-str                    ;== "abONEcdefg"
-str: "abcdefg"
-insert find str "c" "ONE" ;== "cdefg"
-str	                      ;== "abONEcdefg"
-; insert (find str "c") "ONE"  ; equivalent
-
-; append
-str: "Red"         ;== "Red"
-append str "100"   ;== "Red100"
-append str [1 0 0] ;== "Red100100"
 
 ; lower- and uppercase
 str: "Red"
@@ -108,4 +112,5 @@ names: ["John" "Dave" "Jane" "Bob" "Sue"]
 foreach name names [
     if find name "a" [
         if find name "e" [print name]
+    ]
 ]

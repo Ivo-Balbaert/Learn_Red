@@ -16,7 +16,7 @@ number-of-guesses: 0
 loop max-number-of-guesses [
     answer: ask "Type a number (from 1 till 99) or stop(S): "
     if answer = "S" [
-        print "Allright, you want to stop."
+        print "OK, you want to stop."
         break
     ]
     

@@ -27,12 +27,21 @@ if 13 == 13.0 [print "ok"]  ;== none    ; same value but not same datatype!
 
 ; either
 either 13 < 42 [print "13 < 42"][print "13 > 42"] ;== 13 < 42  
+; equivalent to:
+if 13 < 42 [print "13 < 42"]
+print "13 > 42"
+
 either 13 > 42 [print "13 < 42"][print "13 > 42"] ;== 13 > 42
 
 print either now/time < 12:00 ["AM"]["PM"]   ;== PM
 
 n: 42
 either n < 0 [msg: "negative"][msg: "zero or positive"]
+print ["n is" msg]  ;== a is zero or positive
+
+; equivalent if statement:
+if n < 0 [msg: "negative"]
+msg: "zero or positive"
 print ["n is" msg]  ;== a is zero or positive
 
 either n < 0 [

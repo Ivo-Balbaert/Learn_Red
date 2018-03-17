@@ -1,9 +1,9 @@
 Red []
 
 not-expected: [ 
-     var1: "" 
-     append var1 "*" 
-     print var1 
+    var1: "" 
+    append var1 "*" 
+    print var1 
 ]
 
 loop 3 [do not-expected]
@@ -12,18 +12,15 @@ loop 3 [do not-expected]
 ;== ***
 
 expected: [ 
-     var1: copy "" 
-     append var1 "*" 
-     print var1 
+    var1: copy "" 
+    append var1 "*" 
+    print var1 
 ]
 
 loop 3 [do expected]
 ;== *
 ;== *
 ;== *
-
-copy/part "Red herring" 3  ;== "Red"
-copy/part [A B C D] 3      ;== [A B C]
 
 copy []   ; creates an empty series
 copy ""   ; creates an empty string
@@ -32,6 +29,9 @@ copy ""   ; creates an empty string
 data: [A B C D]
 clear data
 data    ;== []
+
+copy/part "Red herring" 3  ;== "Red"
+copy/part [A B C D] 3      ;== [A B C]
 
 ; shallow copy
 nblk: [11 12 13 14 [22 33 44] 15]

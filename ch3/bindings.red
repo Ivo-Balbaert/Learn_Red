@@ -82,3 +82,6 @@ get 'print
 :b              ;== [1 2 3]
 set 'b [0 1 2]  ;== [0 1 2]
 b               ;== [0 1 2]
+
+unset 'b
+b               ;*** Script Error: a has no value

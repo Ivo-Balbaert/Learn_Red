@@ -10,12 +10,17 @@ empty-lst: []
 length? empty-lst  ;== 0
 empty? empty-lst   ;== true
 
+
 ; selecting an item:
-pick data 3     ;== C
 data/3          ;== C
+pick data 3     ;== C
+
 i: 3
 data/:i         ;== C
+
+; QA 6 :
 empty-lst/5     ;== none
+
 pick data 100   ;== none
 s: "I'm enjoying Red"
 s/4        ;== #" "
@@ -27,7 +32,7 @@ data: next data  ;== [B C D]
 pick data 3      ;== D
 data/3           ;== D
 
-; QA 6:
+; QA 7:
 s: ["A" "B" [42.1 42.2 42.3] red]  ; a nested series
 i: 3      ; used to point to element in top-level series -> [42.1 42.2 42.3]
 j: 2      ; used to point to element in second-level series -> 42.2
@@ -48,7 +53,9 @@ extract contacts 3
 ;     "John Smith" 
 ;     "Paul Thompson" 
 ;     "Jim Persee" 
-;     "G...
+;     "George Jones"
+;     "Tim Paulson"
+;] 
 phones: extract/index contacts 3 3
 ;== ["555-1234" "555-2345" "555-3456" "" "555-5678"]
 
@@ -60,7 +67,8 @@ data2: [A B C D]
 select data2 [B]   ;== C
 find data1 2       ;== [2 3 4]
 
-; QA 7:
+; QA 8:
+s: ["A" "B" [42.1 42.2 42.3] red]
 length? find s "B"  ;== 3
 ; find returns the series [B" [42.1 42.2 42.3] red]
 ; [42.1 42.2 42.3] counts for 1 item
@@ -75,7 +83,7 @@ select blk [22 33 44]    ;== none
 select/only blk [22 33 44] ;== 15
 select/last blk 13
 
-;QA 8:
+; QA 9:
 select/part ["Red" "Crystal" "Ruby" "Java" "Go" "Rust"] ["Java"] 4
 ;== "Go"
 find/part ["Red" "Crystal" "Ruby" "Java" "Go" "Rust"] ["Java"] 4
@@ -89,7 +97,15 @@ find/part ["Red" "Crystal" "Ruby" "Java" "Go" "Rust"] ["Java"] 3
 codes: [2804 -9439 2386 9823 -4217]
 sort codes ;== [-9439 -4217 2386 2804 9823]
 codes      ;== [-9439 -4217 2386 2804 9823]
+
 sort/reverse codes  ;== [9823 2804 2386 -4217 -9439]
 codes: [2804 -9439 2386 9823 -4217]
+
+codes: [2804 -9439 2386 9823 -4217]
+sort/part codes 4  ;== [-9439 2386 2804 9823 -4217]
+
+codes: [2804 -9439 2386 9823 -4217]
+sort/reverse/part codes 4  ;== [9823 2804 2386 -9439 -4217]
+
 reverse codes
 codes  ;== [-4217 9823 2386 -9439 2804]
