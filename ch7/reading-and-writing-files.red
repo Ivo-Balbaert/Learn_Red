@@ -75,5 +75,9 @@ read http://www.red-lang.org/index.html
 ;== {<!DOCTYPE html>^/<html class='v2' dir='ltr' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xml
 
 data: read http://www.red-lang.org/index.html
+
+data: copy/part read http://www.red-lang.org/index.html 15
+; == "<!DOCTYPE html>"
+
 write %redhome.html read http://www.red-lang.org/index.html
 

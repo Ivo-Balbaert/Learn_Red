@@ -46,3 +46,15 @@ appin "b"
 :appin
 ;== func [input /local str][str: "-ab" append str input]
 
+
+; QA 5:
+code:  [appin: func [input /local str] [str: copy "-" append str input]]
+save %codef2.red code
+blk: load %codef2.red
+;== [appin: func [input /local str] [str: "-" append str input]]
+do blk
+;== func [input /local str][str: "-" append str input]
+appin "a"
+;== "-a"
+appin "b"
+;== "-b"

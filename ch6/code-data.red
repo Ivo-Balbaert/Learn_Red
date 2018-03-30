@@ -53,3 +53,38 @@ set-word inc:
 word func
 block [n]
 block [n + 1]
+
+; function flexibility:
+; example 1:
+fp1: function [x [integer!] y [string!]] [
+    prin [x "- "]
+    print y
+]
+
+;-- assigning header and body to variables
+header: [x [integer!] y [string!]]
+body: [
+    prin [x "- "]
+    print y
+]
+
+;-- alternate expression of a function equivalent to foo
+fp1-alt: function header body
+
+;-- make fp2 a function that prints the reverse of y
+fp2: function header replace copy body 'y [reverse y] 
+
+;-- call the three functions
+fp1 108 "Red"              ;== 108 - Red
+fp1-alt 108 "Red"          ;== 108 - Red
+fp2 109 "Red"              ;== 109 - deR
+
+; example 2:
+params: [] 
+body: []
+append params load {message}
+append body load {print message}
+prn: function params body    ;-- function definition     
+
+prn "Hello World"   ;== Hello World
+source prn          ;== prn: func [message][print message]
