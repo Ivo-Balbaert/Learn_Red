@@ -30,7 +30,7 @@ sum 3 4   ;== 7
 sum pi 1  ;== 4.141592653589793
 
 ; return values:
-find-value: func [series value] [
+search-val: func [series value] [
     forall series [
         if (first series) = value [
             return series
@@ -39,11 +39,11 @@ find-value: func [series value] [
     none
 ]
 
-find-value [1 2 3 4] 3   ;== [3 4]
-find-value [1 2 3 4] 9   ;== none
+search-val [1 2 3 4] 3   ;== [3 4]
+search-val [1 2 3 4] 9   ;== none
 
 ; return multiple values:
-find-value: func [series value] [
+search-val: func [series value] [
     forall series [
         if (first series) = value [
             return reduce [series  index? series]
@@ -52,7 +52,7 @@ find-value: func [series value] [
     none
 ]
 
-find-value [1 2 3 4] 3   ;== [[3 4] 3]
+search-val [1 2 3 4] 3   ;== [[3 4] 3]
 
 ; return type
 double: function [

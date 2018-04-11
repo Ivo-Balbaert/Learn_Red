@@ -48,6 +48,9 @@ round 2.35          ;== 2.0
 round 2.5           ;== 3.0
 round/to pi 0.001   ;== 3.142   ; rounds to 0.001
 
+; hexadecimal numbers:
+to-hex 32 ;== #00000020
+
 ; now:
 now/year        ;== 2018
 now/zone        ;== 1:00:00

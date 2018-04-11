@@ -24,6 +24,8 @@ parse rate [thru "<title>" to "</title>"]
 parse rate [thru "<title>" to "</title>"]           ;== false
 parse rate [thru "<title>" to "</title>" thru ">"]  ;== true
 parse rate [thru "<title>" copy data to "</title>" thru ">"]  ;== true
+parse rate [thru "<title>" to "</title>" to end]  ;== true
+
 print data ;1 USD = 0.81191502 EUR
 probe data  ;== "1 USD = 0.81191502 EUR"
 
