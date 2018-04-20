@@ -81,7 +81,7 @@ either error? result: try [average 354 0] [
 ]
 ;== Error id:  zero-divide
 
-; QA 6
+; QA 8
 mysqrt: func [n][
     unless ((type? n) = integer!) or ((type? n) = float!) [
         print ["n must be a number, not a " (type? n)]
@@ -114,7 +114,7 @@ fact 4  ; 24
 ; *** Where: *
 ; *** Stack: fact fact fact fact fact fact fact fact
 
-; QA 7
+; QA 9
 fact: func [
         "Calculate the factorial of a number"
         n   "Argument to factorial"      

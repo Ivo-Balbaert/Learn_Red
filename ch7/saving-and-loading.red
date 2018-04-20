@@ -58,3 +58,7 @@ appin "a"
 ;== "-a"
 appin "b"
 ;== "-b"
+
+; Saving and loading the console history
+save %history system/console/history
+system/console/history: load %history

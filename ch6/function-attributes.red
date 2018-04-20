@@ -24,7 +24,7 @@ inc 3.14 ;== 4.14
 inc: func [n [number!]][n + 1]
 inc 3.14 ;== 4.14
 
-; QA 4:
+; QA 5:
 sum: func [ n[number!] m[number!]][n + m]
 sum 3 4   ;== 7
 sum pi 1  ;== 4.141592653589793
@@ -39,8 +39,8 @@ search-val: func [series value] [
     none
 ]
 
-search-val [1 2 3 4] 3   ;== [3 4]
-search-val [1 2 3 4] 9   ;== none
+search-val [10 20 30 40] 3   ;== [30 40]
+search-val [10 20 30 40] 9   ;== none
 
 ; return multiple values:
 search-val: func [series value] [
@@ -52,7 +52,7 @@ search-val: func [series value] [
     none
 ]
 
-search-val [1 2 3 4] 3   ;== [[3 4] 3]
+search-val [10 20 30 40] 3   ;== [[30 40] 3]
 
 ; return type
 double: function [
@@ -78,7 +78,7 @@ div-sum: func [arg1 arg2 /div n][
 div-sum 3 5         ;== 8
 div-sum/div 3 5 4   ;== 2
 
-; QA 5:
+; QA 6:
 test-ref: func [n m /add /sub][
     if add [return n + m]
     if sub [return n - m]
@@ -114,7 +114,7 @@ func-name: func [
     	; function body
 ]
 
-; QA 6
+; QA 7
 average: func [
         "Return the numerical average of numbers"
     	series "Numbers to average"
