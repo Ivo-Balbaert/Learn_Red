@@ -27,14 +27,19 @@ h1/m                     ;== 42
 select h1 [m]            ;== 42 
 select h1 'm             ;== 42
 
+fruits: ["apple" "ananas" "tomato" "strawberry" "grap"]
+;== ["apple" "ananas" "tomato" "strawberry" "grap"]
+to-hash fruits ;== make hash! ["apple" "ananas" "tomato" "strawberry" "grap"]
+pick fruits 3  ;== "tomato"
+
 ; map!
 m1: make map! ["Red" 1 "Crystal" 7 "Python" 13 "Ruby" 42]
-== #(
-    "Red" 1
-    "Crystal" 7
-    "Python" 13
-    "Ruby" 42
-)
+; == #(
+;     "Red" 1
+;     "Crystal" 7
+;     "Python" 13
+;     "Ruby" 42
+; )
 
 m5: #(
     "Red" 1

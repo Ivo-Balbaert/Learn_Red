@@ -47,7 +47,7 @@ either error? try [4 < "abc"][
 
 if error? err: try [4 < "abc"] [probe err]
 ; make error! [
-;     code: none
+;     code: 339
 ;     type: 'script
 ;     id: 'invalid-compare
 ;     arg1: 4

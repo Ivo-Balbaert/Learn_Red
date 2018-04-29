@@ -11,6 +11,7 @@ n: 13
 m: 42
 n = m       ;== false
 13 = 13.0   ;== true
+equal? 13 13.0   ;== true
 n <> m      ;== true 
 13 == 13    ;== true
 13 == 13.0  ;== false
@@ -49,7 +50,8 @@ round 2.5           ;== 3.0
 round/to pi 0.001   ;== 3.142   ; rounds to 0.001
 
 ; hexadecimal numbers:
-to-hex 32 ;== #00000020
+to-hex 32            ;== #00000020
+to-integer #00000020 ;== 32
 
 ; now:
 now/year        ;== 2018

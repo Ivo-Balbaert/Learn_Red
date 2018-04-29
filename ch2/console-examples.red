@@ -6,7 +6,7 @@ Red [
 ; Red is awesome    ;*** Script Error: awesome has no value
 
 7 * 8           ;== 56
-7*8             ;*** Syntax Error: invalid integer! at "7*8"
+; 7*8             ;*** Syntax Error: invalid integer! at "7*8"
 2.3 + 1         ;== 3.3
 7 / 4           ;== 1
 85.3 / 2.5      ;== 34.12

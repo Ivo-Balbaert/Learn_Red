@@ -3,7 +3,7 @@ Red [
 ]
 
 ; when compiling, you need:
-; #include %../../../red-source/environment/console/input.red
+; #include %../../../red-source/environment/console/CLI/input.red
 
 print "Enter a number: "
 num: input

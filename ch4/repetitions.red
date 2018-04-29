@@ -4,6 +4,7 @@ Red []
 count: 99
 forever [
     print append form count " books to read"
+    ; print [form count " books to read"]
     count: count - 1
     if count = 0 [break]
 ]

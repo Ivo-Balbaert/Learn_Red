@@ -1,7 +1,7 @@
 Red []
 
 ; passing arguments by reference:
-passing-ref: function [ data [block! ]][
+passing-ref: function [data][
     append data 108
 ]
 
@@ -13,6 +13,10 @@ data  ;== [2 3 7 42 108]
 inc: func [n][n + 1]
 inc 3.14 ;== 4.14
 ; inc "abc"    ;*** Script Error: + does not allow string! for its value1 argument
+
+passing-ref: function [ data [block!] ][
+    append data 108
+]
 
 inc: func [n [integer!]][n + 1]
 ; inc 3.14  ;*** Script Error: inc does not allow float! for its n argument
@@ -63,7 +67,7 @@ double: function [
 ]
 
 double 42 ;== 84
-double pi ;*** Script Error: double does not allow float! for its n argument
+; double pi ;*** Script Error: double does not allow float! for its n argument
 
 ; refinements:
 sum: func [arg1 arg2 /avg][
@@ -103,16 +107,16 @@ max: function [
 max 42 7 ;== 42
 
 ; code style:
-func-name: func [
-        "Comments for the function itself"
-    	arg1    [type1!]  "Describe 1st argument"
-        arg2    [type2!]  "Describe 2nd argument"
-		/ref1             "Describe refinement"
-                argref1 [type1]                        
-        return: [type3!]  "Describe return value"                
-][
-    	; function body
-]
+; func-name: func [
+;         "Comments for the function itself"
+;     	arg1    [type1!]  "Describe 1st argument"
+;         arg2    [type2!]  "Describe 2nd argument"
+; 		/ref1             "Describe refinement"
+;                 argref1 [type1]                        
+;         return: [type3!]  "Describe return value"                
+; ][
+;     	; function body
+; ]
 
 ; QA 7
 average: func [

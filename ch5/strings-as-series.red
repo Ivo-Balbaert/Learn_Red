@@ -33,11 +33,11 @@ clear find s " politics"
 s                ;== "American"
 
 ; trim
-str: "    No more war !.    "
-trim/head str       ;== "No more war !.    "      
-trim/tail str       ;== "No more war !."
+str: "    No more war !    "
+trim/head str       ;== "No more war !    "      
+trim/tail str       ;== "No more war !"
 ; trim str          ; does both /head and /tail                        
-trim/all str        ;== "Nomorewar!."   ; removes all spaces                       
+trim/all str        ;== "Nomorewar!"   ; removes all spaces                       
 trim/with str "!."  ;== "Nomorewar"
 
 ; pad

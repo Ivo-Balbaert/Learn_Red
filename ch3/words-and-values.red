@@ -1,3 +1,4 @@
+Red []
 ; contains code of section "Words and Values"
 ; this is not a valid Red code file
 
@@ -18,9 +19,11 @@ delete
 ; native!
 if
 print
+list-env
 
 ;routine!
-list-env
+ask
+get-current-dir
 
 ; datatypes
 date!
@@ -33,14 +36,14 @@ name: "John"
 room-number: 42
 
 ; word separators:
-[ ] ( ) { } " : ; / 
+; [ ] ( ) { } " : ; / 
 
-valid words
-is-integer?
-date-of-birth
-date!
-*new-line*
-Area51
+; valid words:
+; is-integer?
+; date-of-birth
+; date!
+; *new-line*
+; Area51
 
 ; the same word:
 ; City

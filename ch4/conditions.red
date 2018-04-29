@@ -37,12 +37,12 @@ print either now/time < 12:00 ["AM"]["PM"]   ;== PM
 
 n: 42
 either n < 0 [msg: "negative"][msg: "zero or positive"]
-print ["n is" msg]  ;== a is zero or positive
+print ["n is" msg]  ;== n is zero or positive
 
-; equivalent if statement:
+; with an if statement:
 if n < 0 [msg: "negative"]
 msg: "zero or positive"
-print ["n is" msg]  ;== a is zero or positive
+print ["n is" msg]  ;== n is zero or positive
 
 either n < 0 [
     msg: "negative"

@@ -26,6 +26,8 @@ s: "I'm enjoying Red"
 s/4        ;== #" "
 pick s 5   ;== #"e"
 
+second system/console/prompt    ;== #">
+
 at data 3  ;== [C D]
 
 data: next data  ;== [B C D]
@@ -65,6 +67,7 @@ select data1 2     ;== 3
 select data1 99    ;== none
 data2: [A B C D]
 select data2 [B]   ;== C
+select data2 'B    ;== C
 find data1 2       ;== [2 3 4]
 
 ; QA 8:

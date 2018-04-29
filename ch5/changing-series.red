@@ -65,6 +65,7 @@ repeat i (length? names) [
 names: ["John" "Dave" "Jane" "Bob" "Sue"]
 repeat i (length? names) [
     print append (append form i ": ") (pick names i)
+    ; print [form i ":" pick names i]
 ]
 
 ; repend

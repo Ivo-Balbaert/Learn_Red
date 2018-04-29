@@ -1,12 +1,12 @@
 Red [
-    File: %guess-number1.red
+    File: %guess-number.red
     Author: "Ivo Balbaert"
     Description: {
         The program guesses a number from 1 till 99. You have to guess it.
     }
 ]
 
-#include %../../../red-source/environment/console/input.red
+; #include %../../../red-source/environment/console/CLI/input.red
 
 random/seed now/time     
 secret-number: random 99  

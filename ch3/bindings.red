@@ -69,8 +69,17 @@ a: [1 2 3 4 5]
 print b ;== 1 2 3
 
 ; Working with words
+b: [1 2 3]
 'b              ;== b
 type? 'b        ;== word!
+
+c: 'b    ;== b
+type? c  ;== word!
+
+b: [1 2 3]      ;== [1 2 3]
+type? b         ;== block!
+type? 'b        ;== word!
+type? quote 'b  ;== lit-word!
 
 get 'b          ;== [1 2 3]
 get 'print
@@ -83,5 +92,9 @@ get 'print
 set 'b [0 1 2]  ;== [0 1 2]
 b               ;== [0 1 2]
 
+value? a  ;*** Script Error: a has no value
+value? 'a ;== false
+type? get/any 'a ; == unset!
+
 unset 'b
-b               ;*** Script Error: a has no value
+; b               ;*** Script Error: a has no value

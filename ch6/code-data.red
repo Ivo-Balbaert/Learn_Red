@@ -16,7 +16,7 @@ code/3: 3       ;== 3
 code            ;== [3.141592653589793 ** 3]
 do code         ;== 31.00627668029982
 
-code/2: -       ;*** Script Error: - operator is missing an argument
+; code/2: -       ;*** Script Error: - operator is missing an argument
 ; solution:
 code/2: '-      ;== -
 code            ;== [3.141592653589793 - 3]
@@ -41,7 +41,7 @@ code: load fun               ;== [inc: func [n] [n + 1]]
 code                         ;== [inc: func [n] [n + 1]]                   
 type? code                   ;== block!
 
-inc 7                        ;== *** Script Error: inc has no value
+; inc 7                        ;== *** Script Error: inc has no value
 do code                      ;== func [n][n + 1]
 inc 7                        ;== 8
 :inc                         ;== func [n][n + 1]
@@ -49,10 +49,10 @@ body-of :inc                 ;== [n + 1]
 type? :inc                   ;== function!
 
 foreach item code [print [type? item mold item]]
-set-word inc:
-word func
-block [n]
-block [n + 1]
+; set-word inc:
+; word func
+; block [n]
+; block [n + 1]
 
 ; function flexibility:
 ; example 1:

@@ -6,7 +6,7 @@ Red [
     }
 ]
 
-#include %../../../red-source/environment/console/input.red
+; #include %../../../red-source/environment/console/input.red
 
 random/seed now/time     
 secret-number: random 99  
