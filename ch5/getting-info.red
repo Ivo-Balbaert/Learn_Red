@@ -10,7 +10,6 @@ empty-lst: []
 length? empty-lst  ;== 0
 empty? empty-lst   ;== true
 
-
 ; selecting an item:
 data/3          ;== C
 pick data 3     ;== C
@@ -26,6 +25,9 @@ s: "I'm enjoying Red"
 s/4        ;== #" "
 pick s 5   ;== #"e"
 
+; path!
+; a/b/c         ; path value
+type? 'a/b/c    ;== path!
 second system/console/prompt    ;== #">
 
 at data 3  ;== [C D]
