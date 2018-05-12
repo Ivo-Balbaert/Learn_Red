@@ -34,7 +34,7 @@ either 13 < 42 [print "13 < 42"][print "13 > 42"] ;== 13 < 42
 if 13 < 42 [print "13 < 42"]
 print "13 > 42"
 
-either 13 > 42 [print "13 < 42"][print "13 > 42"] ;== 13 > 42
+either 13 > 42 [print "13 > 42"][print "13 < 42"] ;== 13 < 42
 
 print either now/time < 12:00 ["AM"]["PM"]   ;== PM
 

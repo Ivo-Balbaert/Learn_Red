@@ -1,8 +1,15 @@
 Red []
 
 ; change an item:
+; to a word:
 data: [A B C D]
-; data/3: X    ; doesn't work: X has no value!
+data/3: 'X     ;== X
+data           ;== [A B X D]
+; data/3: X    ; Script Error: X has no value!
+poke data 3 'X
+
+; to a string:
+data: [A B C D]
 data/3: "X"    ;== "X"
 data           ;== [A B "X" D]
 data: [A B C D]
@@ -83,7 +90,7 @@ s: [10 11 12]    ;== [10 11 12]
 insert at s 2 13 ;== [11 12]
 s                ;== [10 13 11 12]
 
-; remove
+; removeremove
 remove [10 11 12]   ;== [11 12]
 s: [0 1 2 3 4 5]    ;== [0 1 2 3 4 5]
 remove at s 2       ;== [2 3 4 5]
@@ -95,6 +102,16 @@ remove/part [10 11 12] 2 ;== [12]
 ; take
 take [10 11 12]      ;== 10
 take/last [10 11 12] ;== 12
+
+; unique:
+unique [7 13 42 108 2 7 14 42 109] returns [7 13 42 108 2 14 109]
+
+; remove-each:
+ser: [7 13 42 108]
+remove-each item ser [even? item]
+ser ;== [7 13]
+remove-each item ser [item < 10]
+ser ;== [13]
 
 ; move
 s: ["A" "B" "C"]
